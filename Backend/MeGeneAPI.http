@@ -1,0 +1,6 @@
+@MeGeneAPI_HostAddress = http://localhost:5185
+
+GET {{MeGeneAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
