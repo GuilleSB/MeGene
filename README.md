@@ -1,20 +1,20 @@
-# 📌 Generador de Código C# desde SQL Server
+# 📌 C# Code Generator from SQL Server
 
-## 📖 Descripción
-Este proyecto es un generador de código que permite convertir estructuras de tablas en **SQL Server** en **modelos C#**. La aplicación sigue una arquitectura **modular y escalable**, permitiendo futuras mejoras e integraciones.
+## 📖 Description
+This project is a code generator that converts **SQL Server** table structures into **C# models**. The application follows a **modular and scalable architecture**, allowing future improvements and integrations.
 
-## 🚀 Características
-✅ **Obtención Dinámica de Esquemas**: Listado de bases de datos, schemas y tablas desde un servidor SQL Server.  
-✅ **Generación Automática de Modelos C#**: Traducción de la estructura de tablas a clases en C# con anotaciones de Entity Framework.  
-✅ **API Segura y Modular**: Controladores y servicios separados para una mejor organización y escalabilidad.  
-✅ **Middleware de Manejo de Errores**: Implementación de un sistema estandarizado para respuestas y manejo de excepciones.
+## 🚀 Features
+✅ **Dynamic Schema Retrieval**: Fetch databases, schemas, and tables from an SQL Server instance.  
+✅ **Automatic C# Model Generation**: Translates table structures into C# classes with Entity Framework annotations.  
+✅ **Secure and Modular API**: Separate controllers and services for better organization and scalability.  
+✅ **Exception Handling Middleware**: Standardized system for error handling and API responses.
 
-## 📂 Estructura del Proyecto
+## 📂 Project Structure
 ```
 MeGeneAPI/
 │── Controllers/
-│   ├── DatabaseController.cs    # Manejo de bases de datos, schemas y tablas.
-│   ├── ModelGeneratorController.cs  # Generación de modelos C#.
+│   ├── DatabaseController.cs    # Handles databases, schemas, and tables.
+│   ├── ModelGeneratorController.cs  # Handles C# model generation.
 │
 │── Interfaces/
 │   ├── IDatabaseRepository.cs
@@ -22,106 +22,95 @@ MeGeneAPI/
 │   ├── IModelGeneratorService.cs
 │
 │── Middleware/
-│   ├── ExceptionMiddleware.cs    # Manejo de excepciones globales.
+│   ├── ExceptionMiddleware.cs    # Global exception handling.
 │
 │── Models/
-│   ├── ApiResponse.cs           # Modelo de respuestas estándar.
-│   ├── DatabaseRequests.cs      # Modelos para solicitudes API.
-│   ├── TableColumn.cs           # Estructura de columnas en una tabla SQL.
+│   ├── ApiResponse.cs           # Standard API response model.
+│   ├── DatabaseRequests.cs      # Models for API requests.
+│   ├── TableColumn.cs           # Table column structure for SQL.
 │
 │── Repositories/
-│   ├── DatabaseRepository.cs    # Acceso a datos con ADO.NET.
+│   ├── DatabaseRepository.cs    # Data access using ADO.NET.
 │
 │── Services/
-│   ├── DatabaseService.cs       # Lógica de base de datos.
-│   ├── ModelGeneratorService.cs # Generación de código C#.
+│   ├── DatabaseService.cs       # Database logic.
+│   ├── ModelGeneratorService.cs # C# code generation.
 │
-│── appsettings.json             # Configuraciones del proyecto.
-│── Program.cs                   # Configuración de la API.
-│── MeGeneAPI.csproj              # Archivo de configuración del proyecto.
+│── appsettings.json             # Project configurations.
+│── Program.cs                   # API setup.
+│── MeGeneAPI.csproj              # Project configuration file.
 ```
 
-## 🔧 Instalación y Uso
-### **1️⃣ Clonar el Repositorio**
+## 🔧 Installation and Usage
+### **1️⃣ Clone the Repository**
 ```bash
-git clone https://github.com/tuusuario/MeGeneAPI.git
+git clone https://github.com/yourusername/MeGeneAPI.git
 cd MeGeneAPI
 ```
 
-### **2️⃣ Configurar la Conexión a SQL Server**
-Editar el archivo `appsettings.json` con la conexión a la base de datos:
-```json
-{
-  "ConnectionStrings": {
-    "DefaultConnection": "Server=MI_SERVIDOR;Database=MI_BASE;User Id=USUARIO;Password=CLAVE;"
-  }
-}
-```
-
-### **3️⃣ Ejecutar el Proyecto**
+### **2️⃣ Run the Project**
 ```bash
 dotnet build
 dotnet run
 ```
-La API estará disponible en `http://localhost:5000/swagger`.
+The API will be available at `http://localhost:5000/swagger`.
 
-## 🔥 Endpoints Disponibles
-### **📌 Obtener Bases de Datos**
+## 🔥 Available Endpoints
+### **📌 Get Databases**
 ```http
 POST /api/database/list
 ```
 **Body:**
 ```json
 {
-  "connectionString": "Server=MI_SERVIDOR;User Id=USUARIO;Password=CLAVE;"
+  "connectionString": "Server=MY_SERVER;User Id=USER;Password=PASSWORD;"
 }
 ```
 
-### **📌 Obtener Schemas de una Base de Datos**
+### **📌 Get Schemas from a Database**
 ```http
 POST /api/database/schemas
 ```
 **Body:**
 ```json
 {
-  "connectionString": "Server=MI_SERVIDOR;User Id=USUARIO;Password=CLAVE;",
-  "database": "MiBase"
+  "connectionString": "Server=MY_SERVER;User Id=USER;Password=PASSWORD;",
+  "database": "MyDatabase"
 }
 ```
 
-### **📌 Obtener Tablas de un Schema**
+### **📌 Get Tables from a Schema**
 ```http
 POST /api/database/tables
 ```
 **Body:**
 ```json
 {
-  "connectionString": "Server=MI_SERVIDOR;User Id=USUARIO;Password=CLAVE;",
-  "database": "MiBase",
-  "schema": "Ventas"
+  "connectionString": "Server=MY_SERVER;User Id=USER;Password=PASSWORD;",
+  "database": "MyDatabase",
+  "schema": "Sales"
 }
 ```
 
-### **📌 Generar Código C# para una Tabla**
+### **📌 Generate C# Model from a Table**
 ```http
 POST /api/model/generate
 ```
 **Body:**
 ```json
 {
-  "connectionString": "Server=MI_SERVIDOR;User Id=USUARIO;Password=CLAVE;",
-  "database": "MiBase",
-  "schema": "Ventas",
-  "table": "Ordenes"
+  "connectionString": "Server=MY_SERVER;User Id=USER;Password=PASSWORD;",
+  "database": "MyDatabase",
+  "schema": "Sales",
+  "table": "Orders"
 }
 ```
 
-## 📜 Licencia
-Este proyecto está bajo la **MIT License**.
+## 📜 License
+This project is licensed under the **MIT License**.
 
-## ✨ Contribuciones
-¡Las contribuciones son bienvenidas! Si quieres mejorar el proyecto, abre un PR o sugiere cambios en Issues.
+## ✨ Contributions
+Contributions are welcome! If you want to improve the project, submit a PR or suggest changes in the Issues section.
 
-📌 **Autor**: Guillermo Sotomayor Blanco  
-🚀 **LinkedIn**: [gu99sotob](www.linkedin.com/in/gu99sotob)  
+📌 **Author**: Guillermo Sotomayor Blanco  
 
