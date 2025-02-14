@@ -11,7 +11,7 @@ This project is a code generator that converts **SQL Server** table structures i
 
 ## 📂 Project Structure
 ```
-MeGeneAPI/
+Backend/
 │── Controllers/
 │   ├── DatabaseController.cs    # Handles databases, schemas, and tables.
 │   ├── ModelGeneratorController.cs  # Handles C# model generation.
@@ -113,4 +113,5 @@ This project is licensed under the **MIT License**.
 Contributions are welcome! If you want to improve the project, submit a PR or suggest changes in the Issues section.
 
 📌 **Author**: Guillermo Sotomayor Blanco  
+
 
