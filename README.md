@@ -9,9 +9,9 @@ Este proyecto es un generador de código que permite convertir estructuras de ta
 ✅ **API Segura y Modular**: Controladores y servicios separados para una mejor organización y escalabilidad.  
 ✅ **Middleware de Manejo de Errores**: Implementación de un sistema estandarizado para respuestas y manejo de excepciones.
 
-## 📂 Estructura del Proyecto
+## 📂 Estructura resumida del Proyecto
 ```
-MeGeneAPI/
+Backend/
 │── Controllers/
 │   ├── DatabaseController.cs    # Manejo de bases de datos, schemas y tablas.
 │   ├── ModelGeneratorController.cs  # Generación de modelos C#.
@@ -122,6 +122,5 @@ Este proyecto está bajo la **MIT License**.
 ## ✨ Contribuciones
 ¡Las contribuciones son bienvenidas! Si quieres mejorar el proyecto, abre un PR o sugiere cambios en Issues.
 
-📌 **Autor**: Guillermo Sotomayor Blanco  
-🚀 **LinkedIn**: [gu99sotob](www.linkedin.com/in/gu99sotob)  
+📌 **Autor**: Guillermo Sotomayor Blanco 
 
