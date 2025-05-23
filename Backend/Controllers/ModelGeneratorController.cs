@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 
 [ApiController]
-[Route("api/model")]
+[Route("api/[controller]")]
 public class ModelGeneratorController : ControllerBase
 {
     private readonly IDatabaseService _databaseService;
